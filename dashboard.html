@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d1b">
+<title>User Dashboard</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #080d1b;
+    color: #fff;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 22px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+header h2 {
+    color: #70a5ff;
+}
+
+.profile {
+    background: #18243a;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.welcome {
+    margin-bottom: 25px;
+}
+
+.welcome p {
+    color: #8995ae;
+    margin-top: 8px;
+}
+
+.balance {
+    background: linear-gradient(120deg,#2459d6,#753de0);
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.balance small {
+    color: #e0e8ff;
+}
+
+.balance h1 {
+    font-size: 38px;
+    margin: 12px 0;
+}
+
+.balance p {
+    font-size: 13px;
+    color: #e0e8ff;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.action {
+    background: #111a2e;
+    border: 1px solid #263653;
+    border-radius: 14px;
+    padding: 22px 12px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+
+.action:hover {
+    border-color: #4485ff;
+    background: #182744;
+}
+
+.action .emoji {
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.action h3 {
+    font-size: 14px;
+}
+
+.action p {
+    font-size: 11px;
+    color: #8995ae;
+    margin-top: 7px;
+}
+
+.section {
+    background: #111a2e;
+    border: 1px solid #263653;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.section h3 {
+    margin-bottom: 15px;
+}
+
+.section p {
+    color: #a0aec6;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.referral {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.referral input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px;
+    border: 1px solid #34435f;
+    border-radius: 8px;
+    background: #080d1b;
+    color: white;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 16px;
+    background: #3478f6;
+    color: white;
+    cursor: pointer;
+}
+
+.support {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    border-radius: 10px;
+    background: #17365a;
+    color: #83b5ff;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.history {
+    color: #8995ae;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+}
+
+footer {
+    text-align: center;
+    color: #68748d;
+    font-size: 12px;
+    padding: 25px;
+}
+
+@media(max-width:600px) {
+    .grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .balance h1 {
+        font-size: 32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <h2>PREMIUM PORTAL</h2>
+    <div class="profile">👤 My Account</div>
+</header>
+
+<div class="welcome">
+    <h2>Welcome to Dashboard!</h2>
+    <p>Manage your account and rewards.</p>
+</div>
+
+<div class="balance">
+    <small>YOUR COIN BALANCE</small>
+    <h1>0 Coins</h1>
+    <p>Earn rewards by inviting your friends.</p>
+</div>
+
+<div class="grid">
+
+    <div class="action" onclick="showMessage('Add Fund')">
+        <div class="emoji">💳</div>
+        <h3>Add Fund</h3>
+        <p>Add balance to account</p>
+    </div>
+
+    <div class="action" onclick="withdraw()">
+        <div class="emoji">💸</div>
+        <h3>Withdraw</h3>
+        <p>Request your rewards</p>
+    </div>
+
+    <div class="action" onclick="invite()">
+        <div class="emoji">🎁</div>
+        <h3>Invite Friends</h3>
+        <p>Earn 500 coins per successful invite</p>
+    </div>
+
+    <div class="action" onclick="showMessage('Transaction History')">
+        <div class="emoji">📊</div>
+        <h3>History</h3>
+        <p>View transactions</p>
+    </div>
+
+    <div class="action" onclick="showMessage('Notifications')">
+        <div class="emoji">🔔</div>
+        <h3>Notifications</h3>
+        <p>Latest updates</p>
+    </div>
+
+    <div class="action" onclick="showMessage('Account Settings')">
+        <div class="emoji">⚙️</div>
+        <h3>Settings</h3>
+        <p>Manage your account</p>
+    </div>
+
+</div>
+
+<div class="section">
+    <h3>🎁 Invite & Earn</h3>
+    <p>
+        Invite your friends to join our platform.
+        You can earn 500 coins for every eligible
+        and successfully verified referral.
+    </p>
+
+    <div class="referral">
+        <input type="text" id="referralLink"
+        value="Referral system coming soon" readonly>
+        <button onclick="copyReferral()">Copy</button>
+    </div>
+</div>
+
+<div class="section">
+    <h3>📜 Recent Transactions</h3>
+    <div class="history">
+        No transactions available yet.
+    </div>
+</div>
+
+<div class="section">
+    <h3>👤 Account Information</h3>
+    <p>Account Status: Pending Verification</p>
+    <p>Phone Verification: Not Connected</p>
+    <p>Device Security: Not Connected</p>
+</div>
+
+<a class="support"
+href="https://t.me/YOUR_TELEGRAM_USERNAME"
+target="_blank">
+    💬 Contact Customer Service
+</a>
+
+<footer>
+    © 2026 Premium Portal. All Rights Reserved.
+</footer>
+
+</div>
+
+<script>
+const TELEGRAM = "https://t.me/YOUR_TELEGRAM_USERNAME";
+
+function showMessage(action) {
+    if(action === "Add Fund") {
+        window.open(TELEGRAM, "_blank");
+    } else {
+        alert(action + " will be available after account system setup.");
+    }
+}
+
+function withdraw() {
+    const message =
+    "For an active user account, please connect Customer Service first.";
+
+    if(confirm(message + "\n\nContact Customer Service?")) {
+        window.open(TELEGRAM, "_blank");
+    }
+}
+
+function invite() {
+    alert("Your personal referral link will be available after account registration.");
+}
+
+function copyReferral() {
+    const field = document.getElementById("referralLink");
+
+    if(field.value === "Referral system coming soon") {
+        alert("Referral link is not generated yet.");
+        return;
+    }
+
+    navigator.clipboard.writeText(field.value)
+    .then(() => alert("Referral link copied!"))
+    .catch(() => alert("Unable to copy link."));
+}
+</script>
+
+</body>
+</html>
