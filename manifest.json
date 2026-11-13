@@ -4,9 +4,17 @@
   "short_name": "Power Boost",
   "description": "Power Boost Official User Dashboard",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#080d18",
   "theme_color": "#080d18",
   "orientation": "portrait",
-  "icons": []
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
 }
