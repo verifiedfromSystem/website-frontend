@@ -26,6 +26,17 @@
     font-family: Arial, sans-serif;
 }
 
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js")
+      .catch(error => {
+        console.error("Service Worker registration failed:", error);
+      });
+  });
+}
+</script>
+
 body {
     min-height: 100vh;
     background: #080d1b;
