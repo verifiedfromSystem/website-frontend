@@ -2,174 +2,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-<meta name="theme-color" content="#080d18">
-
-<link rel="manifest" href="./manifest.json">
-
-<link rel="icon" href="./icon.svg" type="image/svg+xml">
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Power Boost">
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080d1b">
-<title>Premium User Portal</title>
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<title>Power Boost Official</title>
 
 <style>
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
-
-<script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./sw.js")
-      .catch(error => {
-        console.error("Service Worker registration failed:", error);
-      });
-  });
-}
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="./supabase-config.js"></script>
-</body>
-</html>
 
 body {
-    min-height: 100vh;
-    background: #080d1b;
-    color: white;
+  min-height: 100vh;
+  background: #080d1b;
+  color: white;
 }
 
 .container {
-    width: 100%;
-    max-width: 440px;
-    margin: auto;
-    padding: 25px 20px;
+  width: 100%;
+  max-width: 440px;
+  margin: auto;
+  padding: 25px 20px;
 }
 
 .logo {
-    text-align: center;
-    margin: 45px 0 35px;
+  text-align: center;
+  margin: 45px 0 35px;
 }
 
 .logo h1 {
-    font-size: 30px;
-    color: #70a5ff;
-    letter-spacing: 2px;
+  font-size: 30px;
+  color: #70a5ff;
+  letter-spacing: 2px;
 }
 
 .logo p {
-    color: #8995ae;
-    margin-top: 10px;
-    font-size: 13px;
+  color: #8995ae;
+  margin-top: 10px;
+  font-size: 13px;
 }
 
 .card {
-    background: #111a2e;
-    border: 1px solid #263653;
-    padding: 25px 20px;
-    border-radius: 18px;
-    box-shadow: 0 10px 35px #0005;
+  background: #111a2e;
+  border: 1px solid #263653;
+  padding: 25px 20px;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px #0005;
 }
 
 .tabs {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 25px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
 }
 
 .tabs button {
-    flex: 1;
-    padding: 13px 5px;
-    border: none;
-    border-radius: 9px;
-    background: #202c44;
-    color: white;
-    cursor: pointer;
+  flex: 1;
+  padding: 13px 5px;
+  border: none;
+  border-radius: 9px;
+  background: #202c44;
+  color: white;
+  cursor: pointer;
 }
 
 .tabs button.active {
-    background: #3478f6;
+  background: #3478f6;
 }
 
 h2 {
-    font-size: 23px;
-    margin-bottom: 10px;
+  font-size: 23px;
+  margin-bottom: 10px;
 }
 
 .subtitle {
-    color: #8995ae;
-    font-size: 13px;
-    margin-bottom: 25px;
+  color: #8995ae;
+  font-size: 13px;
+  margin-bottom: 25px;
 }
 
 input {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #34435f;
-    border-radius: 9px;
-    outline: none;
-    background: #0b1324;
-    color: white;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #34435f;
+  border-radius: 9px;
+  outline: none;
+  background: #0b1324;
+  color: white;
 }
 
 input:focus {
-    border-color: #3478f6;
+  border-color: #3478f6;
 }
 
 .main-btn {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 9px;
-    background: #3478f6;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 9px;
+  background: #3478f6;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.main-btn:disabled {
+  opacity: .6;
 }
 
 .links {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 13px;
 }
 
 a {
-    color: #76a8ff;
-    text-decoration: none;
-    cursor: pointer;
+  color: #76a8ff;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .support {
-    display: block;
-    text-align: center;
-    margin-top: 25px;
-    padding: 15px;
-    border: 1px solid #263653;
-    border-radius: 10px;
-    color: #70a5ff;
+  display: block;
+  text-align: center;
+  margin-top: 25px;
+  padding: 15px;
+  border: 1px solid #263653;
+  border-radius: 10px;
+  color: #70a5ff;
 }
 
 .footer {
-    text-align: center;
-    margin-top: 30px;
-    color: #68748d;
-    font-size: 12px;
+  text-align: center;
+  margin-top: 30px;
+  color: #68748d;
+  font-size: 12px;
 }
 
 .hidden {
-    display: none;
+  display: none;
+}
+
+#message {
+  margin-top: 15px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #9dbaff;
+  overflow-wrap: anywhere;
 }
 </style>
 </head>
@@ -178,98 +165,231 @@ a {
 
 <div class="container">
 
-    <div class="logo">
-        <h1>PREMIUM PORTAL</h1>
-        <p>Welcome to your personal dashboard</p>
+  <div class="logo">
+    <h1>POWER BOOST</h1>
+    <p>Welcome to your personal dashboard</p>
+  </div>
+
+  <div class="card">
+
+    <div class="tabs">
+      <button class="active" onclick="showForm('login',this)">Login</button>
+      <button onclick="showForm('register',this)">Register</button>
     </div>
 
-    <div class="card">
+    <div id="login">
+      <h2>Welcome Back!</h2>
+      <p class="subtitle">Login to access your account.</p>
 
-        <div class="tabs">
-            <button class="active" onclick="showForm('login',this)">Login</button>
-            <button onclick="showForm('register',this)">Register</button>
-        </div>
+      <form id="loginForm">
+        <input id="loginPhone" type="tel"
+          placeholder="Phone Number (01XXXXXXXXX)" required>
+        <input id="loginPassword" type="password"
+          placeholder="Password" required>
+        <button class="main-btn" type="submit">Login Now</button>
+      </form>
 
-        <div id="login">
-            <h2>Welcome Back!</h2>
-            <p class="subtitle">Login to access your account.</p>
-
-            <form onsubmit="demo(event,'Login')">
-                <input type="tel" placeholder="Phone Number" required>
-                <input type="password" placeholder="Password" required>
-                <button class="main-btn" type="submit">Login Now</button>
-            </form>
-
-            <div class="links">
-                <a onclick="showForm('forgot')">Forgot Password?</a>
-                <a onclick="showForm('register')">Create Account</a>
-            </div>
-        </div>
-
-        <div id="register" class="hidden">
-            <h2>Create Account</h2>
-            <p class="subtitle">Register your new account.</p>
-
-            <form onsubmit="demo(event,'Registration')">
-                <input type="text" placeholder="Full Name" required>
-                <input type="tel" placeholder="Phone Number" required>
-                <input type="password" placeholder="Create Password" required>
-                <input type="password" placeholder="Confirm Password" required>
-                <button class="main-btn" type="submit">Register Now</button>
-            </form>
-        </div>
-
-        <div id="forgot" class="hidden">
-            <h2>Forgot Password</h2>
-            <p class="subtitle">Enter your registered phone number.</p>
-
-            <form onsubmit="demo(event,'Password Recovery')">
-                <input type="tel" placeholder="Phone Number" required>
-                <button class="main-btn" type="submit">Continue</button>
-            </form>
-
-            <div class="links">
-                <a onclick="showForm('login')">Back to Login</a>
-            </div>
-        </div>
-
+      <div class="links">
+        <a onclick="showForm('forgot')">Forgot Password?</a>
+        <a onclick="showForm('register')">Create Account</a>
+      </div>
     </div>
 
-    <a class="support" href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank">
-        Customer Service
-    </a>
+    <div id="register" class="hidden">
+      <h2>Create Account</h2>
+      <p class="subtitle">Register your new account.</p>
 
-    <div class="footer">
-        © 2026 Premium Portal. All Rights Reserved.
+      <form id="registerForm">
+        <input id="fullName" type="text"
+          placeholder="Full Name" required>
+        <input id="registerPhone" type="tel"
+          placeholder="Phone Number (01XXXXXXXXX)" required>
+        <input id="registerPassword" type="password"
+          placeholder="Create Password (minimum 8 characters)"
+          minlength="8" required>
+        <input id="confirmPassword" type="password"
+          placeholder="Confirm Password" minlength="8" required>
+        <button class="main-btn" type="submit">Register Now</button>
+      </form>
     </div>
+
+    <div id="forgot" class="hidden">
+      <h2>Forgot Password?</h2>
+      <p class="subtitle">
+        Contact Customer Service to recover your account.
+      </p>
+      <a onclick="showForm('login')">Back to Login</a>
+    </div>
+
+    <div id="message" role="status"></div>
+
+  </div>
+
+  <a class="support"
+     href="https://t.me/YOUR_TELEGRAM_USERNAME"
+     target="_blank" rel="noopener">
+    Customer Service
+  </a>
+
+  <div class="footer">
+    © 2026 Power Boost Official. All Rights Reserved.
+  </div>
 
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./supabase-config.js"></script>
+
 <script>
 function showForm(id, button) {
-    document.querySelectorAll('.card > div[id]').forEach(el => {
-        el.classList.add('hidden');
-    });
+  document.querySelectorAll('.card > div[id]').forEach(el => {
+    if (el.id !== 'message') el.classList.add('hidden');
+  });
 
-    document.getElementById(id).classList.remove('hidden');
+  document.getElementById(id).classList.remove('hidden');
 
-    document.querySelectorAll('.tabs button').forEach(btn => {
-        btn.classList.remove('active');
-    });
+  document.querySelectorAll('.tabs button').forEach(btn => {
+    btn.classList.remove('active');
+  });
 
-    if(button) button.classList.add('active');
-    else {
-        document.querySelectorAll('.tabs button').forEach(btn => {
-            if(btn.textContent === 'Login') {
-                btn.classList.add('active');
-            }
-        });
-    }
+  if (button) button.classList.add('active');
+
+  if (id === 'login') {
+    document.querySelector('.tabs button').classList.add('active');
+  }
+
+  if (id === 'register') {
+    document.querySelectorAll('.tabs button')[1].classList.add('active');
+  }
+
+  showMessage('');
 }
 
-function demo(event, action) {
-    event.preventDefault();
-    alert(action + " demo only. Backend is not connected yet.");
+function showMessage(text, error = false) {
+  const box = document.getElementById('message');
+  box.textContent = text;
+  box.style.color = error ? '#ff8585' : '#9dbaff';
+}
+
+function formatPhone(value) {
+  let phone = value.trim().replace(/[\s-]/g, '');
+
+  if (phone.startsWith('01')) {
+    phone = '+88' + phone;
+  } else if (phone.startsWith('8801')) {
+    phone = '+' + phone;
+  }
+
+  if (!/^\+8801[3-9]\d{8}$/.test(phone)) {
+    throw new Error('সঠিক বাংলাদেশি ফোন নম্বর দাও।');
+  }
+
+  return phone;
+}
+
+function getClient() {
+  if (typeof supabaseClient === 'undefined') {
+    throw new Error('Database connection পাওয়া যায়নি।');
+  }
+  return supabaseClient;
+}
+
+document.getElementById('registerForm')
+.addEventListener('submit', async function(event) {
+  event.preventDefault();
+
+  const button = this.querySelector('button');
+  button.disabled = true;
+  showMessage('Account তৈরি হচ্ছে...');
+
+  try {
+    const name = document.getElementById('fullName').value.trim();
+    const phone = formatPhone(
+      document.getElementById('registerPhone').value
+    );
+    const password = document.getElementById('registerPassword').value;
+    const confirm = document.getElementById('confirmPassword').value;
+
+    if (password !== confirm) {
+      throw new Error('দুটি Password মিলছে না।');
+    }
+
+    if (password.length < 8) {
+      throw new Error('Password কমপক্ষে ৮ অক্ষরের হতে হবে।');
+    }
+
+    const client = getClient();
+
+    const { data, error } = await client.auth.signUp({
+      phone: phone,
+      password: password,
+      options: {
+        data: {
+          full_name: name
+        }
+      }
+    });
+
+    if (error) throw error;
+
+    if (data.session) {
+      showMessage('Registration successful! Dashboard-এ যাচ্ছি...');
+      window.location.href = './dashboard.html';
+    } else {
+      showMessage(
+        'Account request তৈরি হয়েছে। Phone confirmation চালু থাকলে OTP লাগবে। Supabase Phone Confirmation বন্ধ আছে কি না পরীক্ষা করো।'
+      );
+    }
+
+  } catch (error) {
+    let msg = error.message || 'Registration failed.';
+
+    if (/already|registered|exists/i.test(msg)) {
+      msg = 'Number Already Used';
+    }
+
+    showMessage(msg, true);
+  } finally {
+    button.disabled = false;
+  }
+});
+
+document.getElementById('loginForm')
+.addEventListener('submit', async function(event) {
+  event.preventDefault();
+
+  const button = this.querySelector('button');
+  button.disabled = true;
+  showMessage('Logging in...');
+
+  try {
+    const phone = formatPhone(
+      document.getElementById('loginPhone').value
+    );
+    const password = document.getElementById('loginPassword').value;
+
+    const { data, error } = await getClient().auth.signInWithPassword({
+      phone: phone,
+      password: password
+    });
+
+    if (error) throw error;
+
+    showMessage('Login successful! Dashboard-এ যাচ্ছি...');
+    window.location.href = './dashboard.html';
+
+  } catch (error) {
+    showMessage(error.message || 'Login failed.', true);
+  } finally {
+    button.disabled = false;
+  }
+});
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .catch(error => console.error(error));
+  });
 }
 </script>
 
